@@ -17,7 +17,7 @@ for face in faces:
     x, y, w, h = (face.left(), face.top(), face.width(), face.height())
     cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
-# Display the image
-cv2.imshow("Face Detection", image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# Save the image to a file
+output_path = "images/output.jpg"
+cv2.imwrite(output_path, image)
+print(f"Output saved to {output_path}")
